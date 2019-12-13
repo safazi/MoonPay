@@ -6,7 +6,7 @@ isCallable = (O) ->
 	MT = getmetatable O
 	return 'function' == type MT.__call if 'table' == type MT
 
-class
+class Promise
 	@State: PENDING: 0, FULFILLED: 1, REJECTED: 2
 	@Async: (F) -> coroutine.wrap(F)!
 	@Queue: {}
