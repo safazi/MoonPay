@@ -36,17 +36,16 @@ class
 		assert format, 'invalid format string passed to Chance.format'
 		result = ''
 		for char in *format
-			switch char
+			result ..=  switch char
 				when 'X' -- upper
-					result ..= @char 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+					@char 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 				when '*' -- charset
-					result ..= @char!
+					@char!
 				when 'N' -- number
-					result ..= @number 0,9
+					@number 0,9
 				when 'A' -- upper and lower
-					result ..= @char 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-				else
-					result ..= char
+					@char 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+				else char
 		result
 	n: (N = 1, F, ...) => [F @, ... for i=1,N]
 	reseed: (Seed = 0) =>
