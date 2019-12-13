@@ -122,6 +122,15 @@ class Chance
 			table.insert result, val
 		result 
 	n: (F, N, ...) => [F @, ... for i=1,N]
+	shuffle: (array) =>
+		assert 'table' == type(array), 'invalid list passed to Chance.shuffle'
+		clone = [v for v in *array]
+		for i=#clone,1,-1 do
+			r = @number 1, i
+			n = clone[r]
+			clone[r] = clone[i]
+			clone[i] = n
+		clone
 	reseed: (Seed = 0) =>
 		assert 'number' == type(Seed), 'invalid seed number passed to Chance.reseed)'
 		math.randomseed Seed
