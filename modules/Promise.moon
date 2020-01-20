@@ -63,21 +63,7 @@ class Promise
 				return Value\next @\Resolve, @\Reject
 			return @Transitition Value.State, Value.Value
 		return @Fulfill Value
-		-- -- Uncomment for other implementations of promise
-		-- Called = false
-		-- Success, Result = pcall ->
-		-- 	if isCallable Value.next
-		-- 		Resolve = (Value) ->
-		-- 			return if Called
-		-- 			@Resolve Value
-		-- 			Called = true
-		-- 		Reject = (Reason) ->
-		-- 			return if Called
-		-- 			@Reject Reason
-		-- 			Called = true
-		-- 		Value\next Resolve, Reject
-		-- 	else @Fulfill Value
-		-- @Reject Result if not Success and not Called
+		-- Not supporting other promise versions - no worries about other implementations
 	
 	next: (Resolved, Rejected) =>
 		Next = @@!
