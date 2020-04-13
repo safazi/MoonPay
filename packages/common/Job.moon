@@ -11,5 +11,5 @@ GUID = ->
 class Job extends EventEmitter
 	new: (@ID = GUID!) =>
 	progress: (Value, Max) => @emit 'progress', Value/Max, Value, Max
-	resolve: (@Result) => @
-	fail: (@Failure)
+	resolve: (@Result) => @emit 'status', 1, @Result
+	fail: (@Failure) => @emit 'status', -1, @Failure

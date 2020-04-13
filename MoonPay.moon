@@ -2,8 +2,8 @@
 -- SFZILabs 2019
 
 -- Load modules
-import SerializedFile, Database from require 'modules/Database'
-import Queue from require 'modules/Queue'
+import SerializedFile, Database from require 'database'
+import Queue from require 'common'
 
 -- Open/initialize database, allow clustering
 
