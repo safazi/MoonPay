@@ -1,5 +1,6 @@
 # MoonPay
-Nothing here yet, just some classes in progress.
+This project has been archived.
+I don't play minecraft anymore.
 
 ## Main Idea
 MoonPay is a mock banking system written in Moonscript.
